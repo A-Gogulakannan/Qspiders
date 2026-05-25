@@ -580,7 +580,14 @@ IN BUILT FUNCTIONS TO CREATE ARRAY:
                   print(np.size(a))""
 
                   OUTPUT: 5
+
+        ->SORT:
+
+            ->It will help user to sort the array
+            ->SYNTAX: np.sort(arr) #ascending
+            ->EXAMPLE:
+                ""a=np.array([-10,20,-30,40])
+                  print(np.sort(a))""
+
+                  OUTPUT: [-30,-10,20,40]
 '''
-import numpy as np
-a=np.array([[-10,20,30,-40,50],[10,20,30,40,50]])
-print(np.size(a))
