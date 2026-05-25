@@ -505,10 +505,82 @@ IN BUILT FUNCTIONS TO CREATE ARRAY:
                                [[8 7]
                                [4 3]]]
 
-    ->
+25/05/2026
 
+->INBUILT OPERATIONS OF ARRAY:
+
+    ->There are three types of operations we can perform on array.
+        ->1) Inbuilt functions.
+        ->2) Array to Array operations.
+        ->3) Array with constant operations.
+
+    ->INBUILT FUNCTIONS:
+
+        ->MAX:
+
+            ->Max will help user to find maximum value from the array.
+            ->SYNTAX: np.max(arr) #arr means collection name
+            ->EXAMPLE:
+                ""a=np.array([10,20,30,40])
+                  print(np.max(a))""
+
+                  OUTPUT: 40
+
+        ->MIN:
+
+            ->Min will give minimum value from the array.
+            ->SYNTAX: np.min(arr) #arr means collection name
+            ->EXAMPLE:
+                ""a=np.array([10,20,30,40])
+                  print(np.min(a))""
+
+                  OUTPUT: 10
+
+        ->MEAN:
+
+            ->This attribute will help user to find the average value of the collection
+            ->SYNTAX: np.mean(arr) #arr means collection name
+            ->EXAMPLE:
+                ""a=np.array([10,20,30,40])
+                  print(np.mean(a))""
+
+                  OUTPUT: 25.0
+
+        ->MODE:
+
+            ->Mode operation is not present in numpy
+
+        ->MEDIAN:
+
+            ->This attribute  will help user to find middle value from the array
+            ->SYNTAX: np.median(arr) #arr means collection name
+            ->If the length of the collection is even, then it will take 2 middle values and make average of them to find the median.
+            ->EXAMPLE:
+                ""a=np.array([10,20,30,40])
+                  print(np.median(a))""
+
+                  OUTPUT: 25.0
+
+        ->ABS:
+
+            ->It will help users to make all of the values of an array into positive number
+            ->SYNTAX: np.abs(arr) #arr means collection name.
+            ->EXAMPLE:
+                ""a=np.array([-10,20,-30,40])
+                  print(np.median(a))""
+
+                  OUTPUT: [10,20,30,40] 
+        
+        ->SIZE:
+
+            ->It will help user to find number of elements of the array.
+            ->SYNTAX: np.size(arr) #arr means collection name
+            ->EXAMPLE:
+                ""a=np.array([-10,20,-30,40])
+                  print(np.size(a))""
+
+                  OUTPUT: 5
 '''
-
 import numpy as np
-arr=np.array([[[1,2,3,4],[5,6,7,8]],[[1,2,3,4],[5,6,7,8]]])
-print(arr[::-1,::-1,3:1:-1])
+a=np.array([[-10,20,30,-40,50],[10,20,30,40,50]])
+print(np.size(a))
