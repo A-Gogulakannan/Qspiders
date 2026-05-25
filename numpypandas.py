@@ -590,4 +590,15 @@ IN BUILT FUNCTIONS TO CREATE ARRAY:
                   print(np.sort(a))""
 
                   OUTPUT: [-30,-10,20,40]
+
+        ->SUM:
+
+            ->It will calculate sum of the elements present in the array.
+            ->SYNTAX: np.sum(arr)
+            ->EXAMPLE:
+                ""a=np.array([10,20,30,40])
+                  print(np.sum(a))""
+
+                  OUTPUT: 100
+
 '''
