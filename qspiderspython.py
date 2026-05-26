@@ -681,3 +681,57 @@ le=int(len(s1)**0.5)
 for i in range(0,len(s1),le):
     print(s1[i:i+le])
 '''
+
+"""                                                        22/05/2026                                                        """
+
+'''1) Ip address is valid or not '''
+
+'''
+ip=input("Enter ip address:")
+valid=True
+if len(ip)>=7 and len(ip)<=15:
+    if ip.startswith('.') or ip.endswith('.') or '...' in ip:
+        valid=False
+    else:
+        for ch in ip: 
+            if not (ch.isdigit() or ch=='.'):
+                valid=False  
+                break 
+    print("Valid" if valid else "Not valid")
+else:
+    print("Not valid")
+'''
+
+'''2) Write a python program to count the all non prime numbers in the given list'''
+
+'''
+l=[2,4,5,6,7,8,9,11]
+for i in l:
+    for j in range(2,i):
+        if i%j==0:
+            break 
+    else:
+        l.remove(i)
+print(len(l))
+'''
+
+'''3) write a python program to print the costliest product details in the given list variable '''
+
+'''
+l=[[101,5000],[102,6800],[103,7000],[104,9000]]
+cost=l[0]
+for i in (l):
+    if i[1]>cost[1]:
+        cost=i
+print(cost)
+'''
+
+'''4) Write a python program to check middle character in a given odd length of string is a uppercase or not'''
+
+'''
+s='abCde'
+if len(s)%2!=0:
+    print("Caps" if s[len(s)//2].isupper() else " not caps")
+else:
+    print("Not odd length")
+'''
