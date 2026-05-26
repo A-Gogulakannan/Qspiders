@@ -682,7 +682,7 @@ for i in range(0,len(s1),le):
     print(s1[i:i+le])
 '''
 
-"""                                                        22/05/2026                                                        """
+"""                                                        25/05/2026                                                        """
 
 '''1) Ip address is valid or not '''
 
@@ -735,3 +735,7 @@ if len(s)%2!=0:
 else:
     print("Not odd length")
 '''
+
+"""                                                        26/05/2026                                                        """
+
+'''1) '''

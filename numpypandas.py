@@ -505,7 +505,7 @@ IN BUILT FUNCTIONS TO CREATE ARRAY:
                                [[8 7]
                                [4 3]]]
 
-25/05/2026
+25/05/2026:
 
 ->INBUILT OPERATIONS OF ARRAY:
 
@@ -601,4 +601,32 @@ IN BUILT FUNCTIONS TO CREATE ARRAY:
 
                   OUTPUT: 100
 
+26/05/2026:
+
+        ->VARIANCE:
+
+            ->In numpy .var function is used to calculate the variance of array elements.
+            ->Variance measures the spread of data by calculating the average of the squared value from the value
+            ->SYNTAX: np.var(arr) #arr means collection name
+            ->EXAMPLE:
+                ""arr=np.array([2,4,6,8,10])
+                  print(np.var(arr))""
+
+                  OUTPUT: 8.0
+
+        ->STANDARD DEVIATION:
+
+            ->It is used to calculate the standard deviation of array elements.
+            ->Standard deviation is square root of variance, present in average distance of data points from mean value. 
+            ->SYNTAX:np.std(arr) #arr means collection name
+            ->EXAMPLE:
+                ""arr=np.array([2,4,6,8,10])
+                  print(np.std(arr))""
+
+                  OUTPUT: 2.8284271247461903
+
 '''
+
+import numpy as np  
+arr=np.array([2,4,6,8,10])
+print(arr//100)
