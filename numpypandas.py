@@ -625,8 +625,434 @@ IN BUILT FUNCTIONS TO CREATE ARRAY:
 
                   OUTPUT: 2.8284271247461903
 
+    ->ARRAY WITH CONSTANT OR SCALAR:
+
+        ->It will perform operations on each and every value present in the array with a constant
+        ->EXAMPLE:
+            ""arr=np.array([2,4,6,8,10])
+            print(arr+2)
+            print(arr*2)
+            print(arr-2)
+            print(arr/2)
+            print(arr//2)
+            print(arr%2)
+
+            OUTPUT: [ 4  6  8 10 12]
+                    [ 4  8 12 16 20]
+                    [0 2 4 6 8]
+                    [1. 2. 3. 4. 5.]
+                    [1 2 3 4 5]
+                    [0 0 0 0 0]
+
+27/05/2026:
+
+    ->ARRAY WITH ARRAY OPERATION:
+
+        ->To perform array with array operation the length of the arrays should be same 
+        NOTE: There are multiple operations that user can perform within two or more that two arrays only when the length of the arrays are same.
+
+        ->ARITHMETIC OPERATION:
+
+            ->Arithmetic  operations in numpy arrays allow as to perform fast mathematical calculations on entire dataset without using any loop
+
+        ->RELATIONAL OPERATOR:
+
+            ->Relational operators are used to compare array elements and returns a boolean result.
+
+        ->BITWISE OPERATOR:
+
+            ->Bitwise operator in numpy are used to work on binary level of numbers, allowing user to compine, compare and modify integer values.
+
+                                            --------
+                                           | PANDAS |
+                                            --------
+
+->What is Pandas ?
+
+    ->Pandas is a python library that used for data manipulation, data filtering and data Analysis.
+    ->It provides powerful, Expressive data structures to work with structured data.  
+
+->Why we should use pandas?
+
+    ->data manipulation.
+    ->data filtering.
+    ->data analysis.  
+
+->DATA CLEANING:
+
+    ->It is a process of removing unwanted data from a dataset .
+
+->DATA STRUCTURES IN PANDAS:
+
+    ->In pandas their are two data Structures:
+        ->SERIES:
+            ->It is 1D (One Dimensional) data which is looking like a single spreadsheet column having index level. 
+        ->DATAFRAME:  
+            ->It is 2D (Two Dimensional) data structure which is looking like a full spread sheet having rows and columns.  
+
+->SERIES
+
+    ->CREATION OF SERIES:
+
+        ->BY USING PANDAS:
+
+            ->EXAMPLE:
+                import pandas as pd
+                s = pd.Series([1,2,3,4,5],index=['a','b','c','d','e'])
+                s
+
+                OUTPUT:
+                a    1
+                b    2
+                c    3
+                d    4
+                e    5
+                dtype: int64
+
+            (OR)
+
+            ->EXAMPLE:
+                s = pd.Series([1,2,3,4,5])
+                s
+
+                OUTPUT:
+                0    1
+                1    2
+                2    3
+                3    4
+                4    5
+                dtype: int64
+
+            (OR)
+
+            ->EXAMPLE:
+
+                import pandas as pd
+                mock = pd.Series(['1','1*','2','2*'],index=['Sreeleela','DEepthi Sunaina','Samantha','Anupama Parameswaran'],name='Actresses')
+                mock
+
+                OUTPUT:
+
+                Sreeleela                1
+                DEepthi Sunaina         1*
+                Samantha                 2
+                Anupama Parameswaran    2*
+                Name: Actresses, dtype: str
+
+        ->BY USING NUMPY ARRAY:
+
+            ->EXAMPLE:
+
+                import pandas as pd
+                import numpy as np
+                arr = np.array([1,2,3,4,5])
+                se = pd.Series(arr)
+                se
+
+                OUTPUT:
+
+                import numpy as np
+                arr = np.array([1,2,3,4,5])
+                se = pd.Series(arr)
+                print(se)
+
+        ->BY USING DICTIONARY:
+
+            ->EXAMPLE:
+                data = {'Biriyani':100,'Chicken':150,'Mutton':200}
+                s = pd.Series(data,name='Price of food')
+                print(s)
+
+                OUTPUT:
+
+                Biriyani    100
+                Chicken     150
+                Mutton      200
+                Name: Price of food, dtype: int64
+
+        ->BY USING SCALAR:
+
+            ->EXAMPLE:
+                seri = pd.Series('good',index = ['a','b','c'],name = 'greet')
+                seri
+
+                OUTPUT:
+
+                a    good
+                b    good
+                c    good
+                Name: greet, dtype: str
+
+->ATTRIBUTES OF SERIES:
+
+    ->EXAMPLE:
+        s = pd.Series([1,2,3,4,5,6],index=['a','b','c','d','e','f'])
+        
+        #VALUES
+        s.value #array([1, 2, 3, 4, 5,6])
+
+        #INDEX
+        s.index #Index(['a', 'b', 'c', 'd', 'e', 'f'], dtype='str')
+
+        #DATATYPE:
+        s.dtype #dtype = int64
+
+        #DIMENSION
+        s.ndim
+
+        #SHAPE
+        s.shape
+
+        #SIZE
+        s.size
+
+        #NAME
+        s.name
+
+        #HEAD
+        s.head() # it will give first 5 values with index if we don't pass values
+
+        #TAIL 
+        s.tail() # it will give last 5 values with index if we don't pass values
+
+        #SAMPLE
+        s.sample()
+
+        #INFO
+        s.info()
+
+->AGGREGATION FUNCTION:
+
+    ->EXAMPLE:
+        price = pd.Series([1200, 3500, 1250, 5000],index =['harshed', 'Madhavan', 'Prudhvi', 'Sanjay'], name = 'purchase')
+        price.sum()
+        price.min()
+        price.max()
+        price.mean()
+        price.median() # for median we need to sort the array.
+        price.mode()
+
+    ->VALUE COUNTS:
+        ->it used to count how many times each unique values appears after counting it returns result in a sorted order by their frequency. 
+        ->This attribute is also called as frequency counter.   
+
+*Example:-*
+```python
+se = pd.Series([12, 45, 34, 76, 12, 66, 34, 89])
+se.value_counts()
+#Output
+12    2
+34    2
+45    1
+76    1
+66    1
+89    1
+Name: count, dtype: int64
+```  
+**describe()**
+* It returns a statistical overview.
+* For numerical data it will provide count, mean, standard deviation, min, max, etc,. 
+
+*Example:-*
+```python
+se = pd.Series([12, 45, 34, 76, 12, 66, 34, 89])
+se.describe()
+#Output
+count     8.000000
+mean     46.000000
+std      28.660575
+min      12.000000
+25%      28.500000
+50%      39.500000
+75%      68.500000
+max      89.000000
+dtype: float64
+```
+**sort_values**  
+* It is used to sort the Series by its data values, not index.
+* As default it will return in ascending order.
+* If user want to get in descending order we need to pass ascending = False
+
+*Example:-*
+```python
+price = pd.Series([1200, 3500, 1250, 5000],index =['harshed', 'Madhavan', 'Prudhvi', 'Sanjay'], name = 'purchase')
+price.sort_values()
+#output
+harshed     1200
+Prudhvi     1250
+Madhavan    3500
+Sanjay      5000
+Name: purchase, dtype: int64
+```
+```python
+# descending order
+price = pd.Series([1200, 3500, 1250, 5000],index =['harshed', 'Madhavan', 'Prudhvi', 'Sanjay'], name = 'purchase')
+price.sort_values(ascending = False)
+#Output
+Sanjay      5000
+Madhavan    3500
+Prudhvi     1250
+harshed     1200
+Name: purchase, dtype: int64
+```
+**unique()**
+* it is used to return an array of distinct values in order of first appearance.  
+*Example:-*
+```python
+se = pd.Series([12, 45, 34, 76, 12, 66, 34, 89])
+se.unique()
+# output
+array([12, 45, 34, 76, 66, 89])
+```
+**nunique**
+* it will give number of unique values.  
+```python
+se = pd.Series([12, 45, 34, 76, 12, 66, 34, 89])
+se.nunique()
+#output
+6
+```
+**Indexing**  
+* Elements can be accessed by their positions or by their label name.
+
+*Example:-*
+```python
+price = pd.Series([1200, 3500, 1250, 5000],index =['harshed', 'Madhavan', 'Prudhvi', 'Sanjay'], name = 'purchase')
+price['harshed']
+#output
+np.int64(1200)
+```
+**Slicing**
+* Python slice notation is same like Series slice notation(syntax).
+
+*Example:-*
+```python
+price = pd.Series([1200, 3500, 1250, 5000],index =['harshed', 'Madhavan', 'Prudhvi', 'Sanjay'], name = 'purchase')
+price[0:2]
+#output
+harshed     1200
+Madhavan    3500
+Name: purchase, dtype: int64
+```
+```python
+price = pd.Series([1200, 3500, 1250, 5000],index =['harshed', 'Madhavan', 'Prudhvi', 'Sanjay'], name = 'purchase')
+price[0:4:2]
+#output
+harshed    1200
+Prudhvi    1250
+Name: purchase, dtype: int64
+```
+## Modification 
+* To modify any data inside the Series we need to follow same notation(Syntax) like list
+* *Syntax* variable[index] = new Value
+
+*Example: *
+```python
+price = pd.Series([1200, 3500, 1250, 5000],index =['harshed', 'Madhavan', 'Prudhvi', 'Sanjay'], name = 'purchase')
+price['harshed'] = 3000
+price
+#Output 
+harshed     3000
+Madhavan    3500
+Prudhvi     1250
+Sanjay      5000
+Name: purchase, dtype: int64
+```
+## DataFrame: 
+* DataFrame is a 2D( two Dimensional) Structure that having rows and columns.
+* Each and Every column is called as Series.    
+
+**Use of DataFrame:**
+* preprocessing of data
+* Data cleaning
+* Data Modification 
+* Data Filtering
+
+## How to create a DataFrame:  
+`df = pd.DataFrame`  
+
+**Method 1 by using Dictionary**   
+***Example:-***
+```python
+#Program
+df = pd.DataFrame({
+    'Name':['Madhavan', 'Sanjay', 'Harshed', 'Prudhvi'],
+    'Age':[22, 23, 21, 25],
+    'City':['Ulluthurpettai', 'Kadalur', 'Kanniyakumari', 'Kalasthri']
+})
+df
+#output
+
+Name	        Age	City
+0	Madhavan	22	Ulluthurpettai
+1	Sanjay	    23	Kadalur
+2	Harshed	    21	Kanniyakumari
+3	Prudhvi	    25	Kalasthri
+```
+->BY USING LIST:
+
+->EXAMPLE:
+
+df2 = pd.DataFrame([['A',30,'Delhi'],['B',25,'Chennai'],['C',28,'Mumbai'],['D',22,'Kolkata']], columns=['Name','Age','location'])
+
+OUTPUT:
+
+.  |Name|Age| City
+0	A	30	Delhi
+1	B	25	Chennai
+2	C	28	Mumbai
+3	D	22	Kolkata
+
+->BY USING SERIES:
+
+->EXAMPLE:
+
+    s1 = pd.Series(['Nobita', 'Gian', 'Sunio'])
+    s2 = pd.Series([1, 67, 70])
+    s3 = pd.Series(['Doraemon', 'Singing', 'Money'])
+    df3 = pd.DataFrame({'Name':s1, 'Marks':s2, 'Powers':s3})
+    df3
+
+    OUTPUT:
+
+    .   Name	Marks power
+    0	Nobita	1	  Doraemon
+    1	Gian	67	  Singing
+    2	Sunio	70	  Money
+
+
+->READING FROM AN DATASET:
+
+    ->Based on the file type it can be excel, csv, html, Json   
+
+    ->SYNTAX:
+        ->variable = pd.read_csv()` 
+
+    ->EXAMPLE:
+        df = pd.read_csv('filelocation_csv') #for a csv file
+        df = pd.read_excel('filelocation_excel') #for a excel file
+
+
+
+STEPS INVOLVED IN EDA
+SLICING
+LOC AND ILOC
+BOOLEAN FILTERING
+STEPS INVOLVED IN DATA CLEANING
+GROUPBY
+CONCATENATION
+JOINS
+FEATURE ENGINEERING
+
+10/06/2026:
+
+    ->GROUP BY:
+
+        ->It is used to group all the rows that have same values in a particular column
+        ->SYNTAX:
+            ->var=df.groupby('catewgorical_col')
+        ->The column which is having less number of unique values is known as categorical column.
+        ->Example:
+            a=df.groupby('class')
 '''
 
-import numpy as np  
-arr=np.array([2,4,6,8,10])
-print(arr//100)

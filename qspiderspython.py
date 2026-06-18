@@ -738,4 +738,424 @@ else:
 
 """                                                        26/05/2026                                                        """
 
-'''1) '''
+'''1) Write a python program to check given valid parenthesis or not'''
+
+'''
+s=input("Enter here:")
+valid = True
+stack=[]
+pairs={'(':')','{':'}','[':']'}
+for ch in s:
+    if ch in pairs:
+        stack.append(ch) 
+    else:
+        if not stack:
+            valid=False  
+            break  
+        if pairs[stack.pop()]!=ch:
+            valid=False  
+            break
+print("Valid parenthesis" if valid and not stack else "Not valid parenthesis")
+
+'''
+
+'''2) Write a python program to find the missing number in the given list data type'''
+
+'''
+n=[1,3,4,5,7]
+n2=n[-1]
+for i in range(1,n2+1):
+    if i not in n:
+        print(i)
+'''
+
+'''3) Write a python program to '''
+'''n=4
+for i in range(n):
+    for j in range(n):
+        if i==n-1 or i+j==n-1 :
+            print("*", end='')
+        else: 
+            print(" ",end='')
+print()'''
+
+
+''' Patterns'''
+
+'''
+def hallow_pyramid(n):
+    for i in range(n):
+        for j in range(n):
+            if i+j==(n//2) or i-j==(n//2) or i+j==((3 * n // 2) - 1) or j-i ==(n//2):
+                print('*', end=" ")
+            else:
+                print(" ",end=" ")
+        print()
+def right_hallow_triangle(n):
+    for i in range(n):
+        for j in range(n):
+            if j==0 or (i <= n//2 and j == 2*i) or (i > n//2 and j == 2*(n-i-1)):
+                print('*', end=" ")
+            else:
+                print(" ",end=" ")
+        print()
+def top_hallow_triangle(n):
+    for i in range(n):
+        for j in range(n):
+            if i==(n-1) or (i%2==0 and (j==(n//2 - i//2) or j==(n//2 + i//2))):
+                print('*', end=" ")
+            else:
+                print(" ",end=" ")
+        print()
+
+n=int(input("Enter rows:"))
+hallow_pyramid(n)
+right_hallow_triangle(n)
+top_hallow_triangle(n)
+
+'''
+
+
+"""                                                        27/05/2026                                                        """
+
+'''
+
+->Functions:
+
+    ->Function is a block of code used to do a specific task.
+    ->To work on the function it should have 3 main parts.
+        ->Function definition or declaration.
+        ->Function body.
+        ->Function calling.
+    ->SYNTAX:
+        def function_name(parameters):
+            #statements
+        function_name(arguments)
+
+->Advantages of functions:
+
+    ->REUSABILITY:
+
+        ->It means declare the function ones and reuse many times.
+
+    ->MODULARITY:
+
+        ->It means divide the bigger task into smaller parts, complete the smaller task to achive the bigger task.
+    
+    ->NOTE: Rules on working with the function:
+
+            ->Function key word should start with def keyword.
+            ->Function parameters are optional.
+            ->Function calling should be always after the function declaration or definition.
+            ->Ones the function is declared, we can call that in any file with the help of packages and modules.
+
+    ->TO CREATE AN FUNCTION IN PYTHON:
+
+        ""def sam():
+              print("HI")
+          sam()#first time calling
+          sam()#second time calling
+
+    ->TYPES OF FUNCTIONS IN PYTHON:
+
+        ->Builtin functions
+        ->User defined or custom function.
+        ->Nested function.
+        ->Miscellaneous function.
+        ->Lamda or anonymous function
+
+        ->BUILTIN FUNCTION.
+
+            ->Functions which are already present in python or which is already developed by the developers, we can use those functions in our programming life whenever we required but we cannot change the meaning of those functions.
+            ->EXAMPLE: print(),sum(),ord(),chr(),...
+            ->NOTE: In python many builtin functions are there.
+
+        ->USER DEFINED FUNCTION OR CUSTOM FUNCTION.
+
+            ->The function which is designed by the programmers based on the user requirement or project requirement
+            ->EXAMPLE:
+                ""def sqr(n1,n2):
+                    print(n1*n2)
+                  sqr(10,20)
+                  sqr(5,6)""
+
+                  OUTPUT: 200
+                          30
+
+        NOTE:PARAMETERS: Parameters are the names passing to the function during the function declaration or function definition.
+        NOTE:ARGUMENTS: Arguments are the values passing to the parameters during the function call.
+        NOTE:Number of parameters declared during the function declaration, for all the parameters need to pass the values.
+        NOTE:If we miss a single value also, python will throws a error.
+
+        ->RETURN KEYWORD:
+
+            ->It is a function keyword in python which is used to return any type of value from the function.
+            ->Return keyword can be only used inside the function or method.
+            ->Return keyword will send the output to the function call.
+
+            ->SYNTAX:
+                def function_name(params):
+                    ----------
+                    ----------
+                    return any_data
+
+            ->EXAMPLE:
+                ""def addition(n1,n2):
+                    return n1+n2
+                  var=addition(10,20)
+                  print(var)""
+
+                OUTPUT: 30
+
+        ->Write a python program to create a function and it should accept a parameter and return a msg wheather the given is even or odd
+
+            def even_odd(n):
+                    return 'even' if n%2==0 else 'odd'
+            print(even_odd(5))
+
+
+        ->TYPES OF USER-DEFINED FUNCTIONS:
+
+            ->Function without parameter and without return type:
+                    
+                def addition():
+                    n1=int(input())
+                    n2=int(input())
+                    print(n1+n2)
+                addition()
+
+            ->Function with parameter and without return type:
+
+                def addition(n1.n2):
+                    print(n1+n2)
+                addition(10,20)
+
+            ->Function without parameter and with return type:
+
+                def addition():
+                    n1=int(input())
+                    n2=int(input())
+                    return n1+n2
+                addition()
+
+            ->Function with parameter and with return type:
+
+                def addition(n1,n2):
+                    return n1+n2
+                addition(10,20)
+
+            ->Function with recursion or without recursion:
+
+
+        ->NESTED FUNCTIONS:
+
+            ->It is a function which is declared inside the scope of another function is called nested function.
+            ->If any function is declared inside another function then it becomes a local function inside another function.
+            ->A inner function can be called only inside the scope of outer function.
+            ->EXAMPLE:
+                def outer():
+                    print("I am outer function")
+                    def inner1():
+                        print("I am inner function")
+                    def inner2():
+                        print("I am inner function")
+                    inner1()
+                    inner2()
+                outer()
+
+                OUTPUT:
+                    I am outer function
+                    I am inner function
+                    I am inner function
+
+            ->If call the local function outside the outer function then it will throw the error.
+            NOTE: If the function is called before the declaration then it will throw unbound local error.
+            NOTE: We can declare n number of functions inside the scope of another function.
+            NOTE: We can call the inner function in a sequence of random ordered manner.
+
+        ->MISCELLANEOUS FUNCTIONS:
+
+            ->
+
+        ->LAMDA FUNCTION OR ANONYMOUS FUNCTION:
+
+            ->
+
+
+
+
+->PILLARS OF OOPS:
+
+    ->There are 4 main pillers in oops,
+        ->ENCAPSULATION
+        ->INHERITANCE
+        ->POLIMORPHISM
+        ->ABSTRACTION
+
+    ->ENCAPSULATION:
+
+        ->Encapsulation is the process of unwrapping data (variables) and methods (functions) together into a single unit is calles Encapsulation.
+        ->It hides internal details and allows controlled access to the data. 
+        ->MAIN USES OF ENCAPSULATION:
+            ->Data Hiding/Security:
+                ->Prevents direct access to internal variable.
+                ->Protects data from accidental or unauthorized changes.
+            ->Controlled Access:
+                ->Data can only be accessed or modified using getters and setters or @property methods.
+                ->You can control how the data is used or updated.
+            ->Organization:
+                ->Groups data and methods together in a single unit(class)
+                ->Makes the code cleaner, organized and easier to manage.
+
+        ->EXAMPLE:
+            class bank:
+                bankname="SBI"
+                branch="VADA"
+                ifsc="SBIN000123"
+                def __init__(self,name,age,acc_no,pin,balance,mob):
+                    self.name=name
+                    self.age=age
+                    self.acc_no=acc_no
+                    self.__pin=pin
+                    self.__balance=balance
+                    self.mob=mob
+                def cust_dt(self):
+                    print(f'Bankname----->{self.bankname}')
+                    print(f'Name----->{self.name}')
+                    print(f'Age----->{self.age}')
+                    print(f'Balance----->{self.__balance}')
+            c1=bank("Gogul",22,948867,1234,5000,8825743920)
+            c1.cust_dt()
+
+    ->ACCESS SPECIFIERS:
+        ->*Access -----> Permission.
+        ->*Specifiers ----->Which tell something.
+        ->Access specifiers are classified into 3 types:
+            ->Public(No underscore)
+            ->Protected(Single Underscore)
+            ->Private(Double Underscore)
+                ->These are the members of a class which define whether variables and methods can be accessed inside or outside the class.
+                ->They specify whether a user or an object can acces the class members from outside the class or not.
+
+        ->PUBLIC ACCESS SPECIFIER:
+            ->It is a type of access specifier.
+            ->It is a member of a class which will allows the user to access them
+            ->They control access at different levels:
+                ->Within the class.
+                ->Outside the class.
+                ->within the same module.
+                ->Outside the module in another module.
+                ->within the same package.
+                ->outside the package in another package.
+            ->Important point:
+                ->Generally whatever is stored inside a class is treated as public access specifier by default.There is no need to do any extra work to specific public access.
+            
+        ->PROTECTED ACCESS SPECIFIERS:
+            ->It is a type of access specifier.
+            ->It a member of a class which allows access within the class and its derived (child) classes
+            ->Protected member are defined by prefixing underscore(-) to the variable or method name a single
+            ->They Control access at different level such as
+                ->within the class- Allowed
+                ->outside the class - Not recommended
+                ->within the same module - Allowed
+                ->outside the module in another module - Allowed but discouraged
+                ->within the same package Allowed
+                ->outside the package in another package - Allowed but discouraged
+            Important Point:
+                ->protected access specifier in not strictly, enforced in Python
+                ->It is a convention, not a rule
+                ->members prefixed with a single underscore (-) Indicate that they should be accessed only inside the class or it's child classes.
+                ->Programmers should avoid accessing Protected members directly outside the class
+        
+        ->PRIVATE ACCESS SPECIFIER:
+            ->It is a type of access specifier.
+            ->Public and private access specifiers do not provide complete security to the members.To overcome this problem we use private access specifiers.
+'''
+'''
+class student:
+    inst="Qspiders"
+    loc="vada"
+    def __init__(self,name,age,course):
+        self.__name=name
+        self.__age=age
+        self.__course=course
+    def get_data(self):
+        print("Name:",self.__name)
+        print("Age:",self.__age)
+        print("course",self.__course)
+    def set_data(self,name,age,course):
+        self.__name=name
+        self.__age=age
+        self.__course=course
+obj=student('Mahi',22,'DSA')
+obj.get_data()
+obj.set_data('Dinga',12,'python')
+obj.get_data()
+'''
+
+"""                                                        15/06/2026                                                        """
+
+"""
+       ->@PROPERTY IN PYTHON:
+            ->@property is a decorator in Python used to access and modify private members of a class in a controlled and pythonic way without explicitly calling getter and setter methods
+            ->EXAMPLE:
+                    class student:
+                        inst="Qspiders"
+                        loc="vada"
+                        def __init__(self,name,age,course):
+                            self.__name=name
+                            self.__age=age
+                            self.__course=course
+                        @property
+                        def get_data(self):
+                            print("Name:",self.__name)
+                            print("Age:",self.__age)
+                            print("course",self.__course)
+                        @get_data.setter
+                        def set_data(self,values):
+                            self.__name=values[0]
+                            self.__age=values[1]
+                            self.__course=values[2]
+                    obj=student('Mahi',22,'DSA')
+                    obj.get_data
+                    obj.set_data=('Dinga',12,'python')
+                    obj.get_data
+
+            ->EXAMPLE:
+                class Bean:
+                    def __init__(self,name,age):
+                        self.__name=name
+                        self.__age=age
+                    @property
+                    def name(self):
+                        return self.__name
+                    @name.setter
+                    def name(self,value):
+                        self.__name=value
+                    @property
+                    def age(self):
+                        return self.__age
+                    @age.setter
+                    def age(self,value):
+                        self.__age=value
+                obj=Bean('Mahesh',16)
+                print(obj.name)
+                print(obj.age)
+                obj.name='zoro'
+                obj.age=21
+                print(obj.name)
+                print(obj.age)
+            ->NOTE:
+                ->In getters/setters, we call methods with paranthesis to get or set private data.
+                ->In @property, we can use normal variable style - No paranthesis needed - to access or change private data safely.
+
+"""
+
+"""                                                        16/06/2026                                                        """
+
+"""
+
+
+
+"""
+
